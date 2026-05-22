@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Roast Me Generator</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <main class="app">
+
+        <section class="hero">
+            <p class="eyebrow">🔥 Dev Roast Battle</p>
+
+            <h1>Roast Me Generator</h1>
+
+            <p class="description">
+                Type your coding personality, language, tool, or experience level.
+                Then let the app roast you lovingly.
+            </p>
+        </section>
+
+        <section class="roast-card">
+
+            <label for="userInput">Tell me about your coding life</label>
+
+            <div class="input-row">
+                <input type="text" id="userInput" placeholder="Example: I use CSS and GitHub" />
+
+                <button id="roastBtn">
+                    Roast Me
+                </button>
+            </div>
+
+            <div class="actions-row">
+                <button id="clearBtn" class="small-btn">
+                    Clear
+                </button>
+
+                <p id="categoryLabel" class="category-label">
+                    Waiting for roast material...
+                </p>
+            </div>
+
+            <div class="roast-output-box">
+                <p id="roastOutput">
+                    Your roast will appear here 💀
+                </p>
+            </div>
+
+            <div class="result-actions">
+                <button id="againBtn" class="again-btn">
+                    Roast Again
+                </button>
+
+                <button id="copyBtn" class="copy-btn">
+                    Copy Roast
+                </button>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            Built with HTML, CSS, and JavaScript — roast responsibly 💀
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
