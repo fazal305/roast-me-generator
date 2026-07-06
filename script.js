@@ -11,15 +11,15 @@ let currentRoastText = "";
 
 const roastCategories = {
   css: [
-    "Your CSS layout is held together by margin-top: 200px and prayers.",
+    "Your CSS layout is held together by margin-top: 200px and confidence.",
     "You don't fix CSS bugs. You just add another div and hope.",
-    "Your flexbox looks like it was arranged by confused pigeons.",
+    "Your flexbox looks like it was arranged by a confused committee.",
     "Your website is responsive only because it responds badly on every screen."
   ],
 
   javascript: [
     "Your JavaScript has more undefined moments than your life plans.",
-    "You use console.log like it's a therapist.",
+    "You use console.log like it is a full debugging department.",
     "Your code has async issues and emotional damage.",
     "You wrote one function and somehow created a multiverse bug."
   ],
@@ -32,17 +32,17 @@ const roastCategories = {
   ],
 
   beginner: [
-    "You're not a bad developer. You're just in your character development arc.",
+    "You are not a bad developer. You are just in your character development arc.",
     "You named a variable data2 and thought nobody would notice.",
-    "Your first bug wasn't in the code. It was believing the tutorial would work.",
-    "You don't debug yet. You just stare at the screen with betrayal."
+    "Your first bug was believing the tutorial would work exactly the same.",
+    "You do not debug yet. You just stare at the screen with betrayal."
   ],
 
   git: [
-    "You use Git like a horror movie: commit, panic, push, regret.",
+    "You use Git like a suspense movie: commit, panic, push, regret.",
     "A developer who still pushes to main directly? Brave. Dangerous, but brave.",
     "Your commit history looks like a ransom note.",
-    "You don't use Git branches. You use hope."
+    "You do not use Git branches. You use hope."
   ],
 
   wordpress: [
@@ -56,13 +56,13 @@ const roastCategories = {
     "You created one button and somehow needed five components.",
     "Your React state changes more often than your career plan.",
     "You use useEffect like a magic spell.",
-    "Your props are drilling deeper than a conspiracy theory."
+    "Your props are drilling deeper than your documentation."
   ],
 
   vscode: [
-    "Your VS Code has 47 extensions and you still can't find the error.",
+    "Your VS Code has 47 extensions and you still cannot find the error.",
     "You changed the theme and called it productivity.",
-    "Your editor looks professional. Your code is still wanted by the police.",
+    "Your editor looks professional. Your code still needs supervision.",
     "You installed Prettier because even your code was embarrassed."
   ],
 
@@ -74,44 +74,44 @@ const roastCategories = {
   ],
 
   stackoverflow: [
-    "You've been using Stack Overflow for years and still can't center a div.",
+    "You have been using Stack Overflow for years and still cannot center a div.",
     "Your coding style is 20% logic and 80% copied answer from 2016.",
-    "You don't search errors. You negotiate with Stack Overflow.",
+    "You do not search errors. You negotiate with Stack Overflow.",
     "Your browser history knows your bugs better than you do."
   ],
 
   pakistani: [
     "Your code runs only after chai, dua, and three refreshes.",
     "This project has full Karachi load-shedding energy.",
-    "Your bug said 'kal ana' and disappeared from the console.",
+    "Your bug said kal ana and disappeared from the console.",
     "You debug like a Pakistani student before submission: panic first, logic later."
   ],
 
   general: [
     "A developer who uses {input} and still pushes broken code? Legendary chaos.",
     "You said {input} like that explains the bugs.",
-    "Your code doesn't crash. It performs a dramatic exit.",
-    "Your project structure looks like it was organized during an earthquake.",
-    "You don't write bugs. You create surprise features.",
-    "Your README says simple project. The code says crime scene.",
+    "Your code does not crash. It performs a dramatic exit.",
+    "Your project structure looks like it was organized during a deadline.",
+    "You do not write bugs. You create surprise features.",
+    "Your README says simple project. The code says incident report.",
     "You debug by changing random lines until the error gets tired.",
     "Your portfolio project has main character energy and side quest bugs."
   ]
 };
 
 const categoryNames = {
-  css: "CSS roast detected 🔥",
-  javascript: "JavaScript chaos detected 💀",
-  python: "Python roast detected 🐍",
-  beginner: "Beginner arc detected 🧑‍💻",
-  git: "Git disaster detected 🚨",
-  wordpress: "WordPress plugin chaos detected 🧩",
-  react: "React component drama detected ⚛️",
-  vscode: "VS Code extension addiction detected 🛠️",
-  firebase: "Firebase backend confidence detected 🔥",
-  stackoverflow: "Stack Overflow dependency detected 📋",
-  pakistani: "Pakistani dev energy detected ☕",
-  general: "General developer chaos detected 💣"
+  css: "CSS roast detected",
+  javascript: "JavaScript chaos detected",
+  python: "Python roast detected",
+  beginner: "Beginner arc detected",
+  git: "Git disaster detected",
+  wordpress: "WordPress plugin chaos detected",
+  react: "React component drama detected",
+  vscode: "VS Code extension addiction detected",
+  firebase: "Firebase backend confidence detected",
+  stackoverflow: "Stack Overflow dependency detected",
+  pakistani: "Pakistani dev energy detected",
+  general: "General developer chaos detected"
 };
 
 function getRoastCategory(inputText) {
@@ -210,7 +210,6 @@ function getRoastCategory(inputText) {
 
 function getRandomRoast(roastList) {
   const randomIndex = Math.floor(Math.random() * roastList.length);
-
   return roastList[randomIndex];
 }
 
@@ -227,14 +226,13 @@ function shakeInputBox() {
 }
 
 function playRoastSound() {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
 
-  if (!AudioContext) {
+  if (!AudioContextClass) {
     return;
   }
 
-  const audioContext = new AudioContext();
-
+  const audioContext = new AudioContextClass();
   const oscillator = audioContext.createOscillator();
   const gainNode = audioContext.createGain();
 
@@ -250,6 +248,10 @@ function playRoastSound() {
 
   oscillator.start();
   oscillator.stop(audioContext.currentTime + 0.16);
+
+  setTimeout(() => {
+    audioContext.close();
+  }, 220);
 }
 
 function vibrateDevice() {
@@ -267,7 +269,7 @@ function showRoast() {
   const typedInput = userInput.value.trim();
 
   if (typedInput === "" && lastUserInput === "") {
-    roastOutput.textContent = "Type something first. I can't roast invisible code 💀";
+    roastOutput.textContent = "Type something first. I cannot roast invisible code.";
     categoryLabel.textContent = "No roast material found...";
     currentRoastText = "";
     copyBtn.textContent = "Copy Roast";
@@ -304,7 +306,7 @@ function clearRoast() {
   lastUserInput = "";
   currentRoastText = "";
 
-  roastOutput.textContent = "Your roast will appear here 💀";
+  roastOutput.textContent = "Your roast will appear here.";
   categoryLabel.textContent = "Waiting for roast material...";
 
   againBtn.classList.remove("visible");
@@ -314,32 +316,32 @@ function clearRoast() {
   userInput.focus();
 }
 
-function copyRoast() {
+async function copyRoast() {
   if (currentRoastText === "") {
-    roastOutput.textContent = "Generate a roast first, copy master 💀";
+    roastOutput.textContent = "Generate a roast first, copy master.";
     animateRoastText();
     triggerRoastEffects();
     return;
   }
 
-  navigator.clipboard.writeText(currentRoastText);
+  try {
+    await navigator.clipboard.writeText(currentRoastText);
+    copyBtn.textContent = "Copied";
+  } catch (error) {
+    copyBtn.textContent = "Copy failed";
+  }
 
-  copyBtn.textContent = "Copied 💀";
-
-  setTimeout(function() {
+  setTimeout(() => {
     copyBtn.textContent = "Copy Roast";
   }, 1400);
 }
 
 roastBtn.addEventListener("click", showRoast);
-
 againBtn.addEventListener("click", showRoast);
-
 clearBtn.addEventListener("click", clearRoast);
-
 copyBtn.addEventListener("click", copyRoast);
 
-userInput.addEventListener("keydown", function(event) {
+userInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     showRoast();
   }
